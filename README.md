@@ -16,12 +16,11 @@ This project implements a referral-based user signup system where users can sign
   - Signup API
   - Profile Completion API
   - Get Referrals API
-  - Referral Report API (Bonus: CSV Report Generation)
+  - Referral Report API
 
 ## 🛠️ Tech Stack
 - **Backend:** Java, Spring Boot, RESTful APIs
 - **Database:** MySQL (SQL-based storage)
-- **Deployment:** Railway.app
 - **Version Control:** GitHub
 
 ## 🔗 API Endpoints
@@ -31,18 +30,18 @@ This project implements a referral-based user signup system where users can sign
 **Request Body:**
 ```json
 {
-  "name": "Alice",
-  "email": "alice@example.com",
-  "referralCode": "0618ea66"  // Optional
+  "name": "Doe",
+  "email": "doe@example.com",
+  "password":doe234
 }
 ```
 **Response:**
 ```json
 {
-  "userId": 2,
-  "name": "Alice",
-  "email": "alice@example.com",
-  "referralCode": "c2f264b7"
+  "userId": 1, //according to the users in database 
+  "name": "Doe",
+  "email": "doe@example.com",
+  "referralCode": "c2f264b7" // generated random
 }
 ```
 
@@ -59,14 +58,13 @@ This project implements a referral-based user signup system where users can sign
 **Response:** CSV download link.
 
 ## 📌 Deployment
-- **GitHub Repo:** [🔗 Link to Repository](https://github.com/yourusername/your-repo)
-- **Live API on Railway:** [🔗 Deployed Link](https://your-deployment-url.railway.app)
+- **GitHub Repo:** [🔗 Link to Repository](https://github.com/Akshita245/ReferralTrackingApi)
 
 ## 📜 How to Run Locally
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/Akshita246/ReferralTrackingApi.git
+cd ReferralTrackingApi
 
 # Run with Maven
 mvn spring-boot:run
@@ -75,12 +73,16 @@ mvn spring-boot:run
 ## 📡 cURL Requests
 ### Signup Example
 ```bash
-curl -X POST "https://your-deployment-url.railway.app/api/signup" -H "Content-Type: application/json" -d '{ "name": "Alice", "email": "alice@example.com" }'
+  curl -X POST http://localhost:9090/api/signup -H "Content-Type: application/json" -d '{ "name": "Alice", "email": "alice@example.com" }'
 ```
 
 ### Profile Completion Example
 ```bash
-curl -X PUT "https://your-deployment-url.railway.app/api/profile/2"
+curl -X POST http://localhost:9090/api/profile/complete -H "Content-Type: application/json" -d '{ "userId": 2 }'
+```
+### Get Referral Api
+```bash
+   curl -X GET http://localhost:9090/api/referrals/2  
 ```
 
 ## 🏆 Brownie Points Implemented
