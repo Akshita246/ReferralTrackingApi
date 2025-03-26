@@ -58,7 +58,7 @@ This project implements a referral-based user signup system where users can sign
 **Response:** CSV download link.
 
 ## 📌 Deployment
-- **GitHub Repo:** [🔗 Link to Repository](https://github.com/Akshita245/ReferralTrackingApi)
+- **GitHub Repo:** [🔗(https://github.com/Akshita245/ReferralTrackingApi)]
 
 ## 📜 How to Run Locally
 ```bash
