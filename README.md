@@ -86,7 +86,6 @@ curl -X POST http://localhost:9090/api/profile/complete -H "Content-Type: applic
 ```
 
 ## 🏆 Brownie Points Implemented
-✅ CSV report generation for user referrals
 ✅ Clean, readable code
 ✅ Meaningful comments
 ✅ Comprehensive README
